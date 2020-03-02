@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <link rel='icon' href='{{ site.BASE_PATH }}/img/favicon.ico' type='image/x-icon'/ >
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ site.BASE_PATH }}/assets/resources/syntax/syntax.css" rel="stylesheet">
+    <link href="{{ site.BASE_PATH }}/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/app.js"></script>
+    <script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/scroll.js"></script>
+        
+{% include navbar.html %}
+
+<div class="cover">
+    <img src="{{ site.BASE_PATH }}/img/favicon.png" width = "80px" style="opacity: 0.8;">
+    </br>
+    <div><span id="down" class="a" style="font-size: large;"><b>ABOUT</b></span> |  
+        <span id="down" class="f" style="font-size: large;"><b>FEATURES</b></span></div>
+</div>
+
+{% if site.about_path %}
+<div id ="about">
+    {% include about.html %}
+</div>
+{% endif %}
+
+<div id ="features">
+    {{ content }}
+</div>
+
+<div class="landing-footer">
+    {{ site.time | date: '%Y' }} {{ site.author.name }} with jekyll
+</div>
+
+</body>
+</html>
