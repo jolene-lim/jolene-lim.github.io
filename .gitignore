@@ -1,5 +1,5 @@
 .jekyll-cache/
-_config.yml
+.jekyll-metadata
 _site/*
 *Thumbs.db
 Gemfile.lock

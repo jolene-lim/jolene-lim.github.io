@@ -1,0 +1,44 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "/blog/page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: rouge
+markdown: kramdown
+title: paperstone
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: paperstone
+
+description:
+author:
+  name: paperstone
+  email: jolene.lim14@gmail.com
+  github: jolene-lim
+#  twitter: dbtek
+#  pinterest: asd123
+  linkedin: jolene-lim-yuhui
+  bio: yes
+#  email_md5: 726351295ec82e145928582f595aa3aa
+
+# rss_path: feed.xml
+posts_path: blog/index.html
+categories_path: categories.html
+tags_path: tags.html
+
+# set it as url of an image
+favicon: favicon.ico
+prof-pic: prof-pic.jpg
+landing_background_image: img/landing-bg.jpg
+sidebar_background_image: img/sidebar-bg.jpg
+
+url: 'https://jolene-lim.github.io'
+BASE_PATH:
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
