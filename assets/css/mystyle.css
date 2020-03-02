@@ -94,7 +94,6 @@ input {
 
 .featured-img {
 	background-size: contain;
-	position: relative;
 	opacity: 0.7;
 	height: 80%;
 	width: 100%;
@@ -102,7 +101,7 @@ input {
 }
 
 .featured-post {
-	background: rgba(255,255,255,0.8);
+	background: rgba(196,212,203,0.6);
 	height: 100%;
 	overflow: hidden;
 	padding: 20px 50px 50px 20px;
@@ -118,26 +117,30 @@ input {
 .post-header {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
-	font-size: large;
-	color: #6f867f;
-	position: relative;
+	font-size: xx-large;
+	line-height: 150%;
+	color: #1f3c4a;
 	text-align: center;
-	top: 50%;
+	position: relative;
+	top: 20%;
 	bottom: 50%;
 	width: 100%;
 }
 
 .post-content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;  
+	font-weight: 900;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 5% 10% 5% 5%;
 	opacity: 0;
 	text-align: justify;
+	width: 100%;
 }
 
 .featured-post:hover {
-	background: rgba(239,186,97,0.6);
+	background: rgba(239,186,97,0.5);
+	cursor: pointer;
 }
 
 .featured-post:hover .post-header {
