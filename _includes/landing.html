@@ -20,29 +20,29 @@
 <body>
     <script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/scroll.js"></script>
 	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/app.js"></script>
-    <script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/scroll.js"></script>
         
 {% include navbar.html %}
+<section id="landing">
+    <div id="cover">
+        <img src="{{ site.BASE_PATH }}/img/favicon.png" width = "80px" style="opacity: 0.8;">
+        </br>
+        <div><span id="down" onclick='scrollAbout()'><b>ABOUT</b></span> |  
+            <span id="down" onclick="scrollFeatures()"><b>PROJECTS</b></span></div>
+    </div>
 
-<div class="cover">
-    <img src="{{ site.BASE_PATH }}/img/favicon.png" width = "80px" style="opacity: 0.8;">
-    </br>
-    <div><span id="down" class="a" style="font-size: large;"><b>ABOUT</b></span> |  
-        <span id="down" class="f" style="font-size: large;"><b>PROJECTS</b></span></div>
-</div>
+    <div id ="about">
+        {% include about.html %}
+    </div>
 
-<div id ="about">
-    {% include about.html %}
-</div>
+    <div id ="features">
+        {{ content }}
+    </div>
 
-<div id ="features">
-    {{ content }}
-</div>
-
-<div class="landing-footer">
-    {{ site.time | date: '%Y' }} {{ site.author.name }} with jekyll
-</div>
-
+    <div class="landing-footer">
+        {{ site.time | date: '%Y' }} {{ site.author.name }} with jekyll
+    </div>
+</section>
 </body>
 </html>

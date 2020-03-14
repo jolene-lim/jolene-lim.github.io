@@ -1,17 +1,13 @@
-window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  }
-  $(document).ready( function () {
-   $('#down.a').on('click',function () {
-     $('html, body').animate({
-       scrollTop: $('#about').offset().top
-   }, 1000);
-   });
+function scrollAbout() {
+  
+  var topPos = document.getElementById('about').offsetTop;
+  document.getElementById('landing').scrollTop = topPos-10;
 
-   $('#down.f').on('click',function () {
-     $('html, body').animate({
-       scrollTop: $('#features').offset().top
-   }, 1000);
-   });
+};
 
-  });
+function scrollFeatures() {
+  
+  var topPos = document.getElementById('features').offsetTop;
+  document.getElementById('landing').scrollTop = topPos-10;
+
+};

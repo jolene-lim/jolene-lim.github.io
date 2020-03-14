@@ -32,7 +32,6 @@ tags_path: tags.html
 
 # set it as url of an image
 favicon: favicon.ico
-prof-pic: prof-pic.jpg
 landing_background_image: img/landing-bg.jpg
 sidebar_background_image: img/sidebar-bg.jpg
 
