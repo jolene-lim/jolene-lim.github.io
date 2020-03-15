@@ -2,12 +2,12 @@
 ---
 
 @import "colors";
+@import "fonts";
 @import url("github.css");
-@import url('https://fonts.googleapis.com/css?family=Raleway:700|Lato:300,700|Lora|Source+Sans+Pro:300,400,600&display=swap');
 
 /* All */
 body{
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: $main;
 	font-size: 16px;
 	font-weight: 300;
 	line-height: 150%;
@@ -16,7 +16,7 @@ body{
 
 b, strong {color: $base-dark; font-weight: 400;}
 
-a, a:visited{
+a, a:visited, a:focus{
 	font-weight: 400;
 	text-decoration: none;
 	color: $base;
@@ -62,16 +62,24 @@ input {
 
 #cover {
 	height: 100vh;
+	color: #000000;
+	opacity: 0.8;
 	background-image: url("{{ site.BASE_PATH }}/img/landing-bg.jpg");
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	background-size: cover; 
-	opacity: 0.8;
 	filter: brightness(110%);
 	white-space: nowrap;
 	scroll-snap-align: start;
+}
+
+@media only screen 
+	and (max-width: 1000px) {
+    #cover {
+		color: #fff;
+	}
 }
 
 #about-title { text-align: center; height: 20vh;}
@@ -135,17 +143,16 @@ input {
 }
 
 #view-more {
-	font-family: 'Raleway';
+	font-family: $header;
 	font-size: 24px;
-	opacity: 0.5;
+	color: $base-dark;
 	text-align: center; 
 	position: relative;
 	height: 10vh;
 }
 
-#view-more a {
-	color: $base-dark;
-}
+#view-more a { color: $base-dark; }
+#view-more a:hover { color: $base-dark; border-bottom: 5px solid $base-dark;}
 
 .post-header,
 .post-content {
@@ -153,7 +160,7 @@ input {
 }
 
 .post-header {
-	font-family: 'Raleway', sans-serif;
+	font-family: $header;
 	font-weight: 700;
 	font-size: xx-large;
 	line-height: 150%;
@@ -189,6 +196,8 @@ input {
 }
 
 .landing-footer {
+	font-family: $subtitle;
+	font-size: 14px;
 	height: 5vh;
 	background-color: $landing-footer;
 	margin: 0;
@@ -205,8 +214,11 @@ input {
 	top: 0px;
 	padding-top: 10%;
 	color: #fff;
+	height: 100vh;
+	background: url("{{ site.BASE_PATH }}/{{site.sidebar_background_image}}") no-repeat !important;
+	filter: brightness(110%);
+	opacity: 0.85;
 }
-.sidebar a {font-weight: 500 !important;}
 
 .sidebar-header {
 	text-align: center;
@@ -218,12 +230,14 @@ input {
 }
 
 .sidebar-header .title a{
+	font-weight: 300;
 	text-decoration: none;
 	color: #fff;
 }
 
 #bio {
-	font-family: "Courier New", Courier, monospace;
+	font-family: $subtitle;
+	font-weight: 300;
 	font-size: 13px;
 	color: #fff;
 	margin: 0 auto;
@@ -240,13 +254,10 @@ article .share .btn {
   transition:color .2s ease-out, background 1s ease-in;
 }
 
+#contact-list li .btn:hover {background-color: rgba(255, 255, 255, 0.6) !important;}
 #contact-list li:hover .fa-github {color: #6e5494;}
 #contact-list li:hover .fa-linkedin {color: #1D87BD;}
 #contact-list li:hover .fa-envelope {color: #E93E30;}
-
-#contact-list-secondary {
-	padding-bottom: 10px;
-}
 
 /* Page */
 .page-container {
@@ -303,10 +314,11 @@ article{
 }
 
 .post-date {
-	font-family: 'Lato', sans-serif;
+	font-family: $subtitle;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 16px;
+	color: $highlight;
 }
 
 article {
@@ -316,14 +328,14 @@ article {
 
 article img { max-width: 100%; }
 
-h1,h2,h3,h4,h5,h6 { font-family: 'Lora', serif; }
+h1,h2,h3,h4,h5,h6 { font-family: $title, serif; }
 article.home h1,
 article.home h2,
 article.home h3,
 article.home h4,
 article.home h5,
 article.home h6 {
-	font-family: 'Raleway', sans-serif;
+	font-family: $header;
 	font-weight: 700;
 	font-size: 24px;
 	color: $base-dark;
@@ -349,7 +361,7 @@ article.posts h3,
 article.posts h4,
 article.posts h5,
 article.posts h6 {
-	font-family: 'Raleway', sans-serif;
+	font-family: $header;
 	font-weight: 700;
 	font-size: 24px;
 	color: $base-dark;
@@ -369,7 +381,8 @@ article.posts h6 {
 
 footer {
 	padding-top: 15px;
-	font-family: 'Lato', sans-serif;
+	font-family: $subtitle;
+	font-size: 14px;
 	font-weight: 300;
 }
 
@@ -392,13 +405,12 @@ ul.dropdown-menu>li>a {font-weight: 300;}
 
 ul.dropdown-menu>li>a>i.fa {width: 1.3em;}
 
-ul.dropdown-menu>li>a:hover {
-    background-color: $highlight2;
-}
+ul.dropdown-menu>li>a:hover {background-color: $highlight2;}
+ul.dropdown-menu>li>a:visited {background-color: $highlight2;}
 
-.dropdown-menu { background: #fff;}
-.dropdown-menu.about { background-color: $about;}
-.dropdown-menu.features { background-color: $feature; }
+.dropdown-menu { background-color: #fff; }
+.dropdown-menu.menu-about { background-color: $about;}
+.dropdown-menu.menu-features { background-color: $feature; }
 
 .btn, .btn:hover, .btn.active.focus, .btn.active:focus, .btn.focus, .btn.focus:active, .btn:active:focus, .btn:focus {
 	background: none !important;

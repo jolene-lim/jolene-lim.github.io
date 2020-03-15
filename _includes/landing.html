@@ -20,16 +20,21 @@
 <body>
     <script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/scroll.js"></script>
-	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/app.js"></script>
+    <script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/scroll.js"></script>
+    <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/app.js"></script>
         
 {% include navbar.html %}
 <section id="landing">
     <div id="cover">
-        <img src="{{ site.BASE_PATH }}/img/favicon.png" width = "80px" style="opacity: 0.8;">
-        </br>
-        <div><span id="down" onclick='scrollFeatures()'>PROJECTS</span> |  
-            <span id="down" onclick="scrollAbout()">ABOUT</span></div>
+        <div style="position: absolute; text-align: center;">
+            <img src="{{ site.BASE_PATH }}/img/favicon.png" width = "80px" style="opacity: 0.8;">
+            <div>
+                </br>
+                <span id="down" onclick='scrollFeatures()'>PROJECTS</span> |  
+                <span id="down" onclick="scrollAbout()">ABOUT</span>
+            </div>
+        </div>
     </div>
 
     <div id ="features">

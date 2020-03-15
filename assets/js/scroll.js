@@ -19,19 +19,16 @@ $(document).ready(function() {
     var featurePos = document.getElementById('features').offsetTop;
     
     if ($('#landing').scrollTop() < featurePos) {
-      $('.dropdown-menu').removeClass('features');
-      $('.dropdown-menu').removeClass('about');
+      $('.dropdown-menu').removeClass('menu-features').removeClass('menu-about');
     }
 
     else if ($('#landing').scrollTop() < aboutPos) {
-      $('.dropdown-menu').toggleClass('features');
-    }
+      $('.dropdown-menu').removeClass('menu-about').addClass('menu-features');
+    };
 
-    else if ($('#landing').scrollTop() >= aboutPos) {
-      $('.dropdown-menu').toggleClass('about');
-    }
+    if ($('#landing').scrollTop() >= aboutPos) {
+      $('.dropdown-menu').removeClass('menu-features').addClass('menu-about');
+    };
 
-    /*
-    $('btn').toggleClass('scrolled', $('#landing').scrollTop() > topPos);*/
   });
 });
