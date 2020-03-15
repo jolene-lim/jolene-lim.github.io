@@ -19,7 +19,7 @@ title: Tags
             {% assign items = sorted_tag | split: '###' %}
             {% assign tag = items[1] | replace: '##', ' ' %}
             {% assign count = items[2] | plus: 0 %}
-        <a href="#" style="font-weight: 700;">{{ tag }}</a> ({{ count }}) &nbsp;
+        <a href="#">{{ tag }}</a> ({{ count }}) &nbsp;
         {% endfor %}
     </div>  
 

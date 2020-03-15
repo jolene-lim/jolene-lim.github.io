@@ -14,7 +14,7 @@
     <link href="{{ site.BASE_PATH }}/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ site.BASE_PATH }}/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ site.BASE_PATH }}/assets/resources/syntax/syntax.css" rel="stylesheet">
-    <link href="{{ site.BASE_PATH }}/assets/css/mystyle.css" rel="stylesheet">
+    <link href="{{ site.BASE_PATH }}/assets/css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,16 +28,16 @@
     <div id="cover">
         <img src="{{ site.BASE_PATH }}/img/favicon.png" width = "80px" style="opacity: 0.8;">
         </br>
-        <div><span id="down" onclick='scrollAbout()'><b>ABOUT</b></span> |  
-            <span id="down" onclick="scrollFeatures()"><b>PROJECTS</b></span></div>
-    </div>
-
-    <div id ="about">
-        {% include about.html %}
+        <div><span id="down" onclick='scrollFeatures()'>PROJECTS</span> |  
+            <span id="down" onclick="scrollAbout()">ABOUT</span></div>
     </div>
 
     <div id ="features">
         {{ content }}
+    </div>
+
+    <div id ="about">
+        {% include about.html %}
     </div>
 
     <div class="landing-footer">

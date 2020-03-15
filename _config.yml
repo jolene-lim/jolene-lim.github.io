@@ -38,6 +38,9 @@ sidebar_background_image: img/sidebar-bg.jpg
 url: 'https://jolene-lim.github.io'
 BASE_PATH:
 
+sass:
+    sass_dir: _sass
+
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
