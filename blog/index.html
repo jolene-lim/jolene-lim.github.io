@@ -48,12 +48,12 @@ layout: page
 <hr>
 </article>
 {% endfor %}
-<hr/>
 
-<ul class="pager"> 
+<article class="home">
+<ul class="pagination justify-content-between"> 
 
   {% if paginator.previous_page %}
-  <li class="previous">
+  <li class="page-item pager-button btn pagebtn">
     {% if paginator.previous_page == 1 %}
     <a href="{{ site.BASE_PATH }}/">&larr; Newer</a>
     {% else %}
@@ -61,23 +61,24 @@ layout: page
     {% endif %}
   </li>
   {% else %}
-  <li class="previous disabled">
+  <li class="page-item pager-button btn pagebtn disabled">
     <a>&larr; Newer</a>
   </li>
   {% endif %}
   
-  <li>
+  <li class="page-item pager-button btn pagebtn disabled">
     <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
   </li>
 
   {% if paginator.next_page %}
-  <li class="next">
+  <li class="page-item pager-button btn pagebtn">
     <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.next_page }}">Older &rarr;</a>
   </li>
   {% else %}
-  <li class="next disabled">
+  <li class="page-item pager-button btn pagebtn disabled">
     <a>Older &rarr;</a>        
   </li>
   {% endif %}
 
 </ul>
+</article>

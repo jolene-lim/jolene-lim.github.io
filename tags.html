@@ -2,35 +2,40 @@
 layout: page
 title: Tags
 ---
-<div class = "tags">
-    <div>
-        <input type="text" id="search-input" placeholder="Search projects, e.g. by tags, keywords..." size = "100%">
+<div>
+    <input type="text" id="search-input" placeholder="Search projects, e.g. by tags, keywords..." size = "100%">
+</div>
+
+<div class="pop-tags">
+    <b>All tags</b>:
+    {% capture tags %}
+        {% for tag in site.tags %}
+            {{ tag[1].size | plus: -10000 }}###{{ tag[0] | replace: ' ', '##' }}###{{ tag[1].size }}
+        {% endfor %}
+    {% endcapture %}
+    {% assign sorted_tags = tags | split: ' ' | sort %}
+    {% for sorted_tag in sorted_tags %}
+        {% assign items = sorted_tag | split: '###' %}
+        {% assign tag = items[1] | replace: '##', ' ' %}
+        {% assign count = items[2] | plus: 0 %}
+    <a href="#">{{ tag }}</a> ({{ count }}) &nbsp;
+    {% endfor %}
+</div>  
+
+<div class="row">
+    <div class="col-3 d-none d-sm-flex align-items-center justify-content-center tag-graph">
+        <div id="tag-graph"></div>
     </div>
 
-    <div class="pop-tags">
-        <b>All tags</b>:
-        {% capture tags %}
-            {% for tag in site.tags %}
-                {{ tag[1].size | plus: -10000 }}###{{ tag[0] | replace: ' ', '##' }}###{{ tag[1].size }}
-            {% endfor %}
-        {% endcapture %}
-        {% assign sorted_tags = tags | split: ' ' | sort %}
-        {% for sorted_tag in sorted_tags %}
-            {% assign items = sorted_tag | split: '###' %}
-            {% assign tag = items[1] | replace: '##', ' ' %}
-            {% assign count = items[2] | plus: 0 %}
-        <a href="#">{{ tag }}</a> ({{ count }}) &nbsp;
-        {% endfor %}
-    </div>  
-
-    <div class="tag-results">
+    <div class="col-sm-9 tag-results">
         <ul id="results-container"></ul>
     </div>
-
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{site.BASE_URL}}/assets/js/search.js"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/tag-graph.js"></script>
 
 <script>
     

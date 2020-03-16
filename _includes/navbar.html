@@ -1,13 +1,13 @@
-<div class="btn-group" id="nav-menu">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+<div class="btn-group dropdown" id="nav-menu">
+    <button type="button" class="btn btn-default dropdown-toggle caret-off" data-toggle="dropdown" data-display="static">
         <i class="fa fa-bars"></i>
     </button>
     <ul class="dropdown-menu" role="menu">
-        <li><a href="{{ site.BASE_PATH}}/"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="{{ site.BASE_PATH}}/index.html#about"><i class="fa fa-info"></i>About</a></li>
-        <li><a href="{{ site.BASE_PATH}}/{{ site.posts_path }}"><i class="fa fa-book"></i>Blog</a></li>
-        <li><a href="{{ site.BASE_PATH}}/{{ site.tags_path }}"><i class="fa fa-tags"></i>Tags</a></li>
-        <li class="divider"></li>
-        <li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+        <li><a class="dropdown-item" href="{{ site.BASE_PATH}}/"><i class="fa fa-home"></i>Home</a></li>
+        <li><a class="dropdown-item" href="{{ site.BASE_PATH}}/index.html#about"><i class="fa fa-info"></i>About</a></li>
+        <li><a class="dropdown-item" href="{{ site.BASE_PATH}}/{{ site.posts_path }}"><i class="fa fa-book"></i>Blog</a></li>
+        <li><a class="dropdown-item" href="{{ site.BASE_PATH}}/{{ site.tags_path }}"><i class="fa fa-tags"></i>Tags</a></li>
+        <li class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
     </ul>
 </div>

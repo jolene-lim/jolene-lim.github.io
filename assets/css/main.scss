@@ -3,7 +3,6 @@
 
 @import "colors";
 @import "fonts";
-@import url("github.css");
 
 /* All */
 body{
@@ -45,10 +44,12 @@ input {
 	border: 0;
 	outline: 0;
 	border-bottom: 1px solid #000;
+	width: 95%;
 }
 
+.img-circle {width: 90%; max-width: 200px; border-radius: 50%;}
 
-.img-circle {width: 90%; max-width: 200px;}
+.container-fluid {padding: 0;}
 
 /* Landing Page */
 #landing {
@@ -82,7 +83,7 @@ input {
 	}
 }
 
-#about-title { text-align: center; height: 20vh;}
+#about-title { justify-content: center; padding-top: 2.5%; height: 20vh;}
 #about-content {height: 75vh; overflow-y: scroll;}
 .landing-title {border-bottom: 10px solid #000; padding-bottom: 10px;}
 
@@ -146,13 +147,12 @@ input {
 	font-family: $header;
 	font-size: 24px;
 	color: $base-dark;
-	text-align: center; 
-	position: relative;
+	justify-content: center;
 	height: 10vh;
 }
 
 #view-more a { color: $base-dark; }
-#view-more a:hover { color: $base-dark; border-bottom: 5px solid $base-dark;}
+#view-more a:hover {color: $base-dark; border-bottom: 5px solid $base-dark; height: fit-content; padding-bottom: 10px;}
 
 .post-header,
 .post-content {
@@ -222,17 +222,16 @@ input {
 
 .sidebar-header {
 	text-align: center;
-	margin-bottom: 10px;
 }
 .sidebar-header .title{
 	letter-spacing: 3px;
 	text-transform: uppercase;
+	padding: 10px 0;
 }
 
 .sidebar-header .title a{
-	font-weight: 300;
-	text-decoration: none;
 	color: #fff;
+	text-decoration: none;
 }
 
 #bio {
@@ -254,7 +253,7 @@ article .share .btn {
   transition:color .2s ease-out, background 1s ease-in;
 }
 
-#contact-list li .btn:hover {background-color: rgba(255, 255, 255, 0.6) !important;}
+#contact-list li .btn:hover {background-color: rgba(0, 0, 0, 1) !important;}
 #contact-list li:hover .fa-github {color: #6e5494;}
 #contact-list li:hover .fa-linkedin {color: #1D87BD;}
 #contact-list li:hover .fa-envelope {color: #E93E30;}
@@ -262,8 +261,9 @@ article .share .btn {
 /* Page */
 .page-container {
 	padding-top: 50px;
-	padding-right: 30px;
-	padding-left: -5px;
+	padding-right: 60px;
+	padding-left: 15px;
+	margin: 0;
 }
 
 .page-header {
@@ -271,26 +271,37 @@ article .share .btn {
 	letter-spacing: 3px;
 	text-transform: uppercase;
 	color: $base-dark;
+	margin: 0px 20px 20px 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
 }
 
-.tags {
+/* Tags */
+#tags {
 	height: 75vh;
-	overflow: hidden;
 }
 
 .pop-tags {
-	height: 25%;
+	height: 15vh;
 	padding-top: 20px;
 	padding-right: 5%;
 	overflow-y: auto;
 }
 .pop-tags a{ font-weight: 400;}
 
+.tag-graph {
+	width: 100%;
+	height: 55vh;
+	padding-left: 5%;
+	padding-right: 0;
+}
+
 .tag-results {
-	padding-top: 5%;
-	padding-left: 7.5%;
-	height: 75%;
-	overflow-y: auto;
+	height: 55vh;
+	display: flex;
+	align-items: center;
+	padding-left: 5%;
+	overflow-y: scroll;
 }
 
 .tag-results a { color: #000; font-weight: 300;}
@@ -298,13 +309,15 @@ article .share .btn {
 
 @media only screen and (min-width: 768px) {
     .page-header{
-        margin-right: 70px;
+        margin-right: 5%;
     }
-}
+}  
 
+/* Posts */
 article{
 	text-align: justify;
 	margin-bottom: 40px;
+	padding: 0 5% 0;
 }
 
 .article_body{
@@ -312,6 +325,9 @@ article{
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
+.article_tags {	padding-top: 10px;}
+.article_btns { padding-top: 30px; }
 
 .post-date {
 	font-family: $subtitle;
@@ -321,50 +337,28 @@ article{
 	color: $highlight;
 }
 
-article {
-	text-align: justify;
-	padding: 0 5% 0;
-}
-
 article img { max-width: 100%; }
 
 h1,h2,h3,h4,h5,h6 { font-family: $title, serif; }
-article.home h1,
-article.home h2,
-article.home h3,
-article.home h4,
-article.home h5,
-article.home h6 {
-	font-family: $header;
-	font-weight: 700;
-	font-size: 24px;
-	color: $base-dark;
+article.home {
+	h1,h2,h3,h4,h5,h6 {
+		font-family: $header;
+		font-weight: 700;
+		font-size: 24px;
+		color: $base-dark;
+	}
+
+	h1 a, h2 a, h3 a, h4 a { color: $base-dark;}
+	h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover { color: $highlight; text-decoration: none;}
 }
 
-article.home h1 a,
-article.home h2 a,
-article.home h3 a,
-article.home h4 a {
-	color: $base-dark;
-}
-article.home h1 a:hover,
-article.home h2 a:hover,
-article.home h3 a:hover,
-article.home h4 a:hover {
-	color: $highlight;
-	text-decoration: none;
-}
-
-article.posts h1,
-article.posts h2,
-article.posts h3,
-article.posts h4,
-article.posts h5,
-article.posts h6 {
-	font-family: $header;
-	font-weight: 700;
-	font-size: 24px;
-	color: $base-dark;
+article.posts {
+	h1,h2,h3,h4,h5,h6 {
+		font-family: $header;
+		font-weight: 700;
+		font-size: 24px;
+		color: $base-dark;
+	}
 }
 
 .article-img {
@@ -374,17 +368,28 @@ article.posts h6 {
 	width: 60%;
 }
 
-.author .author-image {
-  float: left;
-  margin-right: 20px;
+pre {
+	padding: 9.5px;
+	margin: 0 0 10px;
+	white-space: pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	line-height: 1.5;
 }
 
 footer {
+	height: 10vh;
 	padding-top: 15px;
 	font-family: $subtitle;
 	font-size: 14px;
 	font-weight: 300;
 }
+
+.btn.pagebtn {border: 1px solid #ccc !important; border-radius: 15px;}
+.btn.pagebtn:hover>a{color: $highlight;}
+.btn.pagebtn.disabled:hover>a {color: #000000 !important;}
 
 /* Navbar */
 .navbar {
@@ -398,22 +403,32 @@ footer {
     z-index: 2000;
 }
 #nav-menu .dropdown-menu {
-    left: inherit;
-    right: 0px;
+	transform: translate(-115px, 35px) !important;
+	will-change: auto !important;
 }
-ul.dropdown-menu>li>a {font-weight: 300;}
 
-ul.dropdown-menu>li>a>i.fa {width: 1.3em;}
-
-ul.dropdown-menu>li>a:hover {background-color: $highlight2;}
-ul.dropdown-menu>li>a:visited {background-color: $highlight2;}
-
-.dropdown-menu { background-color: #fff; }
+.dropdown-menu { background-color: #fff;}
 .dropdown-menu.menu-about { background-color: $about;}
 .dropdown-menu.menu-features { background-color: $feature; }
 
+.dropdown-item {font-size: 0.9rem; color: #000 !important; padding: .1rem 1.5rem; height: 1.8em;}
+ul.dropdown-menu>li>a {font-weight: 300;}
+ul.dropdown-menu>li>a>i.fa {width: 2em;}
+ul.dropdown-menu>li>a:hover {background-color: $highlight2; color: #fff !important;}
+ul.dropdown-menu>li>a:visited {background-color: $highlight2; color: #fff;}
+
+.dropdown-divider {border-top: 1px solid #999;}
+
 .btn, .btn:hover, .btn.active.focus, .btn.active:focus, .btn.focus, .btn.focus:active, .btn:active:focus, .btn:focus {
+	font-weight: 300;
 	background: none !important;
 	border: 0.8px solid #000;
 	box-shadow: none !important;
+}
+
+.caret-off::before {
+    display: none;
+}
+.caret-off::after {
+    display: none;
 }

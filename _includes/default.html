@@ -25,11 +25,12 @@
 <body>
 	{% include navbar.html %}
 
-	<div class="col-sm-3 sidebar hidden-xs">
+	<div class="container-fluid">
+	<div class="col-md-3 sidebar d-none d-md-inline">
 		{% include sidebar.html %}
 	</div>
 
-	<div class="col-sm-9 col-sm-offset-3">
+	<div class="col-md-9 offset-md-3">
 		{{ content }}
 
 		<footer>
@@ -39,9 +40,9 @@
 			</p>
 		</footer>
 	</div>
-
+	</div>
 	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/popper/popper.min.js"></script>
 	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/resources/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/app.js"></script>
 </body>
 </html>
